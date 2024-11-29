@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Shoes Shop</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="./image/pngtree-letter-n-logo-png-image_6591539.png">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="address">
+                <i class="bi bi-geo-alt-fill"></i>
+                <a href>123 Ha Noi</a>
+            </div>
+            <div class="phone">
+                <i class="bi bi-telephone"></i>
+                <a href>Hotline:111211231</a>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header_nav">
+            <!-- Thẻ chứa logo -->
+            <div class="header_logo">
+                <img src="./image/pngtree-letter-n-logo-png-image_6591539.png" alt="Logo">
+            </div>
+            <!-- Thẻ chứa navigations -->
+            <div class="header_menu">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="MLB.html">MLB</a></li>
+                    <li><a href="">Nike</a></li>
+                    <li><a href="">Biti's Hunter</a></li>
+                    <li class="shoes_type">
+                        <a href="#">Shoe type</a>
+                        <ul class="dropdown1">
+                            <li><a href="#">Men</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">Baby</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="search-container">
+                    <i class="bi bi-search"></i>
+                    <input type="text" name="search" id="search" placeholder="search">
+                </div>
+                <div class="store">
+                    <a href="cart.html" onclick="toggleCart()">
+                        <i class="bi bi-cart"></i>
+                    </a>
+                    <div id="cart-dropdown" class="cart-dropdown">
+                        <div id="cart-items" class="cart-items">
+                            <div id="cart-count">0</div> 
+                        </div>
+                        <div class="cart-total">
+                            <span>Total:</span>
+                            <span id="cart-total-price">$0</span>
+                        </div>
+                        <button onclick="checkout()">Checkout</button>
+                    </div>
+                </div>
+                <div id="icon-login">
+                    <a href="./login.html"><i class="bi bi-person-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="banner">
+
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="label">BESTSELLER</span>
+                <img src="./image/nike air force1.png" alt="Nike Air Force 1">
+                <div class="product-name">Nike Air Force 1</div>
+                <div class="price">$123.44</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-basic-mau-trang-den-1-1690621959298.webp" alt="MLB Chunky">
+                <div class="product-name">MLB Chunky Liner Basic</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/2-giay-mlb-chunky-high-low-new-york-yankess-32shu2111-50l.png" alt="MLB Chunky High Low New York Yankess">
+                <div class="product-name">MLB Chunky High Low New York Yankess</div>
+                <div class="price">$210</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-logo-la-mau-xanh-1-1695025369837.webp" alt="MLB Chunky Liner">
+                <div class="product-name">MLB Chunky Liner</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <span class="discount">-24%</span>
+                <img src="./image/NIKE+DUNK+LOW+RETRO+SE.png" alt="Nike Dunk Low Retro SE Leather">
+                <div class="product-name">Nike Dunk Low Retro SE Leather</div>
+                <div class="price">
+                    <span class="old-price">$135.00</span> $101.97
+                </div>
+                <div class="delivery">DELIVERY: $3</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+                <button class="buy-now">Buy Now</button>    
+            </div>
+            <div class="product-card">
+                <span class="label">BESTSELLER</span>
+                <img src="./image/nike air force1.png" alt="Nike Air Force 1">
+                <div class="product-name">Nike Air Force 1</div>
+                <div class="price">$123.44</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-basic-mau-trang-den-1-1690621959298.webp" alt="MLB Chunky">
+                <div class="product-name">MLB Chunky Liner Basic</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/2-giay-mlb-chunky-high-low-new-york-yankess-32shu2111-50l.png" alt="MLB Chunky High Low New York Yankess">
+                <div class="product-name">MLB Chunky High Low New York Yankess</div>
+                <div class="price">$210</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-logo-la-mau-xanh-1-1695025369837.webp" alt="MLB Chunky Liner">
+                <div class="product-name">MLB Chunky Liner</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <span class="discount">-24%</span>
+                <img src="./image/NIKE+DUNK+LOW+RETRO+SE.png" alt="Nike Dunk Low Retro SE Leather">
+                <div class="product-name">Nike Dunk Low Retro SE Leather</div>
+                <div class="price">
+                    <span class="old-price">$135.00</span> $101.97
+                </div>
+                <div class="delivery">DELIVERY: $3</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+                <button class="buy-now">Buy Now</button>    
+            </div>
+            <div class="product-card">
+                <span class="label">BESTSELLER</span>
+                <img src="./image/nike air force1.png" alt="Nike Air Force 1">
+                <div class="product-name">Nike Air Force 1</div>
+                <div class="price">$123.44</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-basic-mau-trang-den-1-1690621959298.webp" alt="MLB Chunky">
+                <div class="product-name">MLB Chunky Liner Basic</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/2-giay-mlb-chunky-high-low-new-york-yankess-32shu2111-50l.png" alt="MLB Chunky High Low New York Yankess">
+                <div class="product-name">MLB Chunky High Low New York Yankess</div>
+                <div class="price">$210</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-logo-la-mau-xanh-1-1695025369837.webp" alt="MLB Chunky Liner">
+                <div class="product-name">MLB Chunky Liner</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <span class="discount">-24%</span>
+                <img src="./image/NIKE+DUNK+LOW+RETRO+SE.png" alt="Nike Dunk Low Retro SE Leather">
+                <div class="product-name">Nike Dunk Low Retro SE Leather</div>
+                <div class="price">
+                    <span class="old-price">$135.00</span> $101.97
+                </div>
+                <div class="delivery">DELIVERY: $3</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+                <button class="buy-now">Buy Now</button>    
+            </div>
+            <div class="product-card">
+                <span class="label">BESTSELLER</span>
+                <img src="./image/nike air force1.png" alt="Nike Air Force 1">
+                <div class="product-name">Nike Air Force 1</div>
+                <div class="price">$123.44</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-basic-mau-trang-den-1-1690621959298.webp" alt="MLB Chunky">
+                <div class="product-name">MLB Chunky Liner Basic</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/2-giay-mlb-chunky-high-low-new-york-yankess-32shu2111-50l.png" alt="MLB Chunky High Low New York Yankess">
+                <div class="product-name">MLB Chunky High Low New York Yankess</div>
+                <div class="price">$210</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-logo-la-mau-xanh-1-1695025369837.webp" alt="MLB Chunky Liner">
+                <div class="product-name">MLB Chunky Liner</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <span class="discount">-24%</span>
+                <img src="./image/NIKE+DUNK+LOW+RETRO+SE.png" alt="Nike Dunk Low Retro SE Leather">
+                <div class="product-name">Nike Dunk Low Retro SE Leather</div>
+                <div class="price">
+                    <span class="old-price">$135.00</span> $101.97
+                </div>
+                <div class="delivery">DELIVERY: $3</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+                <button class="buy-now">Buy Now</button>    
+            </div>
+            <div class="product-card">
+                <span class="label">BESTSELLER</span>
+                <img src="./image/nike air force1.png" alt="Nike Air Force 1">
+                <div class="product-name">Nike Air Force 1</div>
+                <div class="price">$123.44</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-basic-mau-trang-den-1-1690621959298.webp" alt="MLB Chunky">
+                <div class="product-name">MLB Chunky Liner Basic</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $2</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/2-giay-mlb-chunky-high-low-new-york-yankess-32shu2111-50l.png" alt="MLB Chunky High Low New York Yankess">
+                <div class="product-name">MLB Chunky High Low New York Yankess</div>
+                <div class="price">$210</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <img src="./image/giay-mlb-chunky-liner-logo-la-mau-xanh-1-1695025369837.webp" alt="MLB Chunky Liner">
+                <div class="product-name">MLB Chunky Liner</div>
+                <div class="price">$200</div>
+                <div class="delivery">DELIVERY: $4</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+            
+                <button class="buy-now">Buy Now</button>    
+            </div>
+    
+            <div class="product-card">
+                <span class="discount">-24%</span>
+                <img src="./image/NIKE+DUNK+LOW+RETRO+SE.png" alt="Nike Dunk Low Retro SE Leather">
+                <div class="product-name">Nike Dunk Low Retro SE Leather</div>
+                <div class="price">
+                    <span class="old-price">$135.00</span> $101.97
+                </div>
+                <div class="delivery">DELIVERY: $3</div>
+                <div class="color-options">
+                    <label for="color"></label>
+                    <div class="color-options-container color-picker">
+                        <div class="color-option" style="background-color: white;" onclick="selectColor('white')"></div>
+                        <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                    </div>
+                </div>
+                
+                <!-- Size Options -->
+                <div class="size-options">
+                    <label for="size">Size:</label>
+                    <div class="size-slider-container">
+                        <span id="size-value">50</span>
+                        <input type="range" id="size-range" min="0" max="100" value="50" onchange="updateSizeValue()">
+                    </div>
+                </div>
+                <button class="buy-now">Buy Now</button>    
+            </div>
+        </div>
+    </main>
+</body><br><br><br><br><br><br><br>
+<footer>
+    <div class="footer-column">
+        <a><strong>Tài nguyên</strong></a>
+        <a>Tìm cửa hàng</a>
+        <a>Trở thành thành viên</a>
+        <a>Gửi phản hồi cho chúng tôi</a>
+    </div>
+    <div class="footer-column">
+        <a><strong>Giúp đỡ</strong></a>
+        <a>Nhận trợ giúp</a>
+        <a>Trạng thái đơn hàng</a>
+        <a>Vận chuyển</a>
+        <a>Trả lại</a>
+        <a>Tùy chọn thanh toán</a>
+        <a>Liên hệ với chúng tôi</a>
+    </div>
+</footer>
+
+</html>
+<script src="./main.js"></script>

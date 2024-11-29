@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes Shop</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="icon" type="image/x-icon" href="./image/pngtree-letter-n-logo-png-image_6591539.png">
+</head>
+<body>
+    <h1>Shopping</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Size</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Rows will be dynamically populated -->
+        </tbody>
+    </table>
+    <div id="cart-total-price">Total Price: $0.00</div>
+    <button class="checkout" onclick="checkout()">Pay!</button>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+
+    <!-- Liên kết đến main.js thay vì cart.js -->
+    <script src="main.js"></script>
+</body>
+</html>
